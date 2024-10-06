@@ -20,8 +20,8 @@ body{
     background-color: salmon;
 }
 
-@media screen and (min-width:480px){
+@media screen and (min-width:380px){
     .media-info-msg{
-        opacity: 1;
+        display: none;
     }
 }
