@@ -1,48 +1,50 @@
-footer{
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    padding-bottom: 30px;
-    border-top: 1px solid #EAEAEA;
-    padding: 20px 0 20px 0;
-    background-color: white;
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  padding-bottom: 30px;
+  border-top: 1px solid #eaeaea;
+  padding: 20px 0 20px 0;
+  background-color: white;
 }
-.footer-block{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.footer-block {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.footer-icons{
-    font-size: 15px;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 20px 0 20px;
-    cursor: pointer;
+.footer-icons {
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px 0 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 @keyframes icons-둥둥 {
-    0%{
-        transform: translateY(0px);
-    }
-    30%{
-        transform: translateY(-10px);
-    }
-    70%{
-        transform: translateY(-10px);
-    }
-    100%{
-        transform: translateY(0px);
-    }
+  0% {
+    transform: translateY(0px);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-.footer-icons img{
-    width: 50px;
-    margin-bottom: 5px;
+.footer-icons img {
+  width: 50px;
+  margin-bottom: 5px;
 }
 
-.footer-icons:hover .footer-icons__img{
-    animation: 2s icons-둥둥 
+.footer-icons:hover .footer-icons__img {
+  animation: 2s icons-둥둥;
 }
