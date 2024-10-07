@@ -22,7 +22,27 @@ footer{
     margin: 0 20px 0 20px;
     cursor: pointer;
 }
+
+@keyframes icons-둥둥 {
+    0%{
+        transform: translateY(0px);
+    }
+    30%{
+        transform: translateY(-10px);
+    }
+    70%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
 .footer-icons img{
     width: 50px;
     margin-bottom: 5px;
+}
+
+.footer-icons:hover .footer-icons__img{
+    animation: 2s icons-둥둥 
 }
