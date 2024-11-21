@@ -1,6 +1,7 @@
 const form = document.getElementById("write-form")
 
 const handleSubmitForm = async(event) => {
+    // 세계 시간 기준으로
     event.preventDefault();
     const body = new FormData(form)
     body.append('insertAt', new Date().getTime())

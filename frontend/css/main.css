@@ -1,9 +1,9 @@
 main {
-  padding: 30px 20px 30px 20px;
+  padding: 30px 20px 120px 20px;
 }
 .item-list {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-bottom: 1px solid #eaeaea;
   padding: 20px 0 20px 0;
@@ -18,10 +18,12 @@ main {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   margin-right: 20px;
+  overflow: hidden;
 }
 
 .item-list__img img {
-  width: 100px;
+  width: 100%;
+  height: auto;
 }
 
 .item-list__info {

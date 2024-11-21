@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, Form
+from fastapi import FastAPI, UploadFile, Form, Response
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
 from fastapi.staticfiles import StaticFiles
@@ -38,6 +38,15 @@ async def get_items():
     rows = cur.execute("SELECT * from items;").fetchall()
 
     return JSONResponse(jsonable_encoder(dict(row) for row in rows))
+
+
+@app.get("/images/{item_id}")
+async def get_image(item_id):
+    cur = con.cursor()
+    image_bytes = cur.execute(f"SELECT image from items WHERE id={item_id}").fetchone()[
+        0
+    ]
+    return Response(content=bytes.fromhex(image_bytes))
 
 
 # app.mount는 항상 맨 팁에 두자. 왜냐면 root path여서 api의 모든 경로가 /를 포함하고 있어서 app.mount만 실행됨
