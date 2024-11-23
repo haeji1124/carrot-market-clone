@@ -58,9 +58,18 @@ const renderDate = (data) => {
 }
 
 const fetchList = async() => {
+    const access_token = window.localStorage.getItem("access_token")
     const res = await fetch('/items', {
-        method: 'GET'
+        method: 'GET',
+        headers:{
+            'Authorization': `Bearer ${access_token}`
+        }
     })
+    if (res.status === 401){
+        alert("로그인이 필요합니다!")
+        window.location.pathname = "/login.html"
+        return
+    }
     const data = await res.json();
     renderDate(data);
 }

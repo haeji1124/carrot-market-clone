@@ -12,7 +12,7 @@ const handleSubmitForm = async(event) => {
         })
         
         const data = await res.json()
-        if (data==='200'){
+        if (res.status==='200'){
             window.location.pathname = "/"
         }
     }

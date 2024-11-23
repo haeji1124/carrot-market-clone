@@ -25,7 +25,7 @@ const handleSubmitForm = async(event) => {
             body:formData,
         })
         const data = await res.json()
-        if (data === "200"){
+        if (res.status === "200"){
             alert("회원가입에 성공했습니다")
             window.location.pathname = "/login.html"
         }
