@@ -49,5 +49,20 @@ async def get_image(item_id):
     return Response(content=bytes.fromhex(image_bytes), media_type="image/*")
 
 
+@app.post("/signup")
+def signup(
+    id: Annotated[str, Form()],
+    password: Annotated[str, Form()],
+    name: Annotated[str, Form()],
+    email: Annotated[str, Form()],
+):
+    cur.execute(
+        f"""INSERT INTO users(id,name,email,password) 
+                VALUES ('{id}','{name}','{email}', '{password}')"""
+    )
+    con.commit()
+    return "200"
+
+
 # app.mount는 항상 맨 팁에 두자. 왜냐면 root path여서 api의 모든 경로가 /를 포함하고 있어서 app.mount만 실행됨
 app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
