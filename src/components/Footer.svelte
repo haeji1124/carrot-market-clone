@@ -1,0 +1,45 @@
+<script>
+  export let location;
+  const moveToHome = () => {
+    window.location.hash = "/";
+  };
+</script>
+
+<footer>
+  <div class="footer-block">
+    <div class="footer-icons">
+      <div class="footer-icons__img">
+        {#if location === "home"}
+          <img src="assets/home.svg" alt="home" on:click={moveToHome} />
+        {:else}
+          <img src="assets/home-solid.svg" alt="home" on:click={moveToHome} />
+        {/if}
+      </div>
+      <div>홈</div>
+    </div>
+    <div class="footer-icons">
+      <div class="footer-icons__img">
+        <img src="assets/doc.svg" alt="home" />
+      </div>
+      <div>동네생활</div>
+    </div>
+    <div class="footer-icons">
+      <div class="footer-icons__img">
+        <img src="assets/location.svg" alt="home" />
+      </div>
+      <div>내근처</div>
+    </div>
+    <a class="footer-icons" href="chat.html">
+      <div class="footer-icons__img">
+        <img src="assets/chat.svg" alt="home" />
+      </div>
+      <div>채팅</div>
+    </a>
+    <div class="footer-icons">
+      <div class="footer-icons__img">
+        <img src="assets/squares.svg" alt="home" />
+      </div>
+      <div>전체</div>
+    </div>
+  </div>
+</footer>
